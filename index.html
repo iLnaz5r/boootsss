@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <style>
+    p{
+      cursor: pointer;
+    }
+    p:hover{
+      color: hsl(26, 100%, 55%);
+      text-decoration: underline;
+    }
+    button{
+      opacity: 120%;
+      cursor: pointer;
+    }
+    button:hover{
+      opacity: 80%;
+    }
+    img:hover{
+      cursor: pointer;
+    }
+    .photos{
+      opacity: 120%;
+    }
+    .photos:hover{
+      opacity: 60%;
+    }
+    .cart{
+      display: none;
+    }
+    .cart.active{
+      position: absolute;
+      border: none;
+      border-radius: 10px;
+      color: hsl(26, 100%, 55%);
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      height: auto;
+      margin-left: -150px;
+      margin-top: 200px;
+      background-color: hsl(25, 100%, 94%);
+      padding-inline: 9px;
+    }
+    .cart hr{
+      width: 226px;
+    }
+    .parag{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      position: relative;
+    }
+    .parag:hover{
+      text-decoration: none;
+    }
+    .menu{
+      display: none;
+    }
+    @media screen and (max-width: 450px) {
+      .menu{
+        display: block;
+        z-index: 2;
+      }
+      .nav{
+        display: none;
+      }
+      .nav.active{
+        position: absolute;
+        border: none;
+        border-radius: 10px;
+        background-color: hsl(26, 100%, 55%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100px;
+        height: 100vh;
+        left: 0;
+        margin-left: -150px;
+        margin-top: 200px;
+        color: hsl(25, 100%, 94%);
+        z-index: 0;
+      }
+    }
+  </style>
+</head>
+<body style="padding-inline: 30px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+  <header style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="left" style="display: flex; align-items: center; gap: 30px;justify-content: center;">
+      <img class="menu" src="icon-menu.svg">
+      <img src="logo.svg">
+      <nav class="nav" style="display: flex;gap: 20px; color: gray;">
+        <p>Collections</p>
+        <p>Men</p>
+        <p>Women</p>
+        <p>About</p>
+        <p>Contact</p>
+      </nav>
+    </div>
+    <div class="right" style="display: flex; align-items: center;gap: 10px;">
+      <img class="cart-photo" src="icon-cart.svg" style="cursor: pointer;">
+      <div class="cart">
+        <h3>Cart</h3>
+        <hr>
+        <p class="parag">Your cart is empty</p>
+      </div>
+      <img class="ava" src="image-avatar.png" width="40px">
+    </div>
+  </header>
+  <br>
+  <hr>
+  <br>
+  <div class="main" style="display: flex;padding: 20px; justify-content: space-between; align-items: center;">
+    <div class="left-main" style="display: flex; flex-direction: column; gap: 20px;">
+      <img src="image-product-1.jpg" width="390px" style="border-radius: 9px;">
+      <div class="products-prev" style="gap: 10px;display: flex;">
+        <img class="photos" src="image-product-1-thumbnail.jpg"width="90px" style="border-radius: 6px;">
+        <img class="photos" src="image-product-2-thumbnail.jpg"width="90px"  style="border-radius: 6px;">
+        <img class="photos" src="image-product-3-thumbnail.jpg"width="90px"  style="border-radius: 6px;">
+        <img class="photos" src="image-product-4-thumbnail.jpg"width="90px"  style="border-radius: 6px;">
+      </div>
+    </div>
+
+    <div class="right-main" style="display: flex; flex-direction: column; width: 500px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      <h6 style="font-size: 18px;color: gray; text-transform: uppercase; font-weight: 100;">Sneaker Company</h6>
+      <h1 style="font-size: 37px;">Fall Limited Edition Sneakers</h1>
+      <p style="font-size: 17px; color: gray; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      <div class="aksha">
+        <div class="price" style="display: flex;gap: 20px; align-items: center;">
+          <h2 class="money">$125.00</h2>
+          <button style="width: 50px; height: 25px;align-items: center;border: none; border-radius: 5px; background-color: black; color: white; font-weight: bolder;">50%</button>
+        </div>
+        <p class="aksha-line" style="margin-top: -10px;text-decoration: line-through;color: gray;">$250.00</p>
+      </div>
+      <div class="knopki" style="display: flex; align-items: center;gap: 10px;margin-top: 10px;">
+        <div class="numbers" style="width: 150px;background-color: rgb(255, 248, 240);display: flex; justify-content: space-between; padding-inline: 10px;align-items: center; border-radius: 10px;">
+          <img class="plus" src="icon-minus.svg">
+          <p class="number">0</p>
+          <img class="minus" src="icon-plus.svg">
+        </div>
+        <button class="add-to-cart" style="width: 300px;padding: 15px;border-radius: 10px; border: none; background-color: hsl(26, 100%, 55%);justify-content: space-between; font-weight: bolder;color: rgb(66, 32, 19);"><img src="icon-cart.svg" width="15px"> Add to cart</button>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
